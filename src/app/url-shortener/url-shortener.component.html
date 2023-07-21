@@ -1,6 +1,25 @@
-<div>
+<div class="container mt-4">
      <h2>URL Shortener</h2>
-     <input type="text" [(ngModel)]="url" placeholder="Enter the URL">
-     <button (click)="shortenUrl(url)">Shorten URL</button>
-     <p *ngIf="shortUrl">Shortened URL: {{ shortUrl }}</p>
+     <input [(ngModel)]="longUrl" class="form-control" placeholder="Enter Long URL" />
+     <button class="btn btn-light mt-2" (click)="shortenUrl()">Shorten</button>
+     <p *ngIf="shortUrl" class="mt-2">Short URL: {{ shortUrl }}</p>
+     <button class="btn btn-light mt-2" (click)="showHistory()">Show History</button>
+</div>
+
+<div class="container mt-4" *ngIf="showingHistory">
+     <h3>History</h3>
+     <ul class="list-group">
+          <li *ngFor="let entry of history; let i = index" class="list-group-item d-flex justify-content-between">
+               <div>
+                    <p>Your link:</p>
+                    <span>{{ entry.longUrl }}</span>
+               </div>
+               <div>
+                    <p>Your shortened link:</p>
+                    <span>{{ entry.shortUrl }}</span>
+               </div>
+               <button class="btn btn-danger btn-sm" (click)="deleteEntry(i)">Delete</button>
+          </li>
+     </ul>
+     <button class="btn btn-light mt-2" (click)="hideHistory()">Close</button>
 </div>

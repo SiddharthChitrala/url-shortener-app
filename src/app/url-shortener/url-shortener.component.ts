@@ -3,26 +3,7 @@ import { UrlShortenerService } from '../url-shortener.service';
 
 @Component({
   selector: 'app-url-shortener',
-  template: `
-    <div>
-      <h2>URL Shortener</h2>
-      <input [(ngModel)]="longUrl" placeholder="Enter Long URL" />
-      <button (click)="shortenUrl()">Shorten</button>
-      <p *ngIf="shortUrl">Short URL: {{ shortUrl }}</p>
-      <button (click)="showHistory()">Show History</button>
-    </div>
-
-    <div *ngIf="showingHistory">
-      <h3>History</h3>
-      <ul>
-        <li *ngFor="let entry of history; let i = index">
-          {{ entry.longUrl }} - {{ entry.shortUrl }}
-          <button (click)="deleteEntry(i)">Delete</button>
-        </li>
-      </ul>
-      <button (click)="hideHistory()">Close</button>
-    </div>
-  `,
+  templateUrl: './url-shortener.component.html', // Use 'templateUrl' for the template file URL
 })
 export class UrlShortenerComponent {
   longUrl = '';
