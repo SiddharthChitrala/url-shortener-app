@@ -4,7 +4,11 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="bg">
-      <p class="fs-2 text-center">URL Shortener App</p>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+          <span class="navbar-brand mb-0 h1">URL SHORTENER APP</span>
+        </div>
+      </nav>
       <p class="height">
         <app-url-shortener></app-url-shortener>
       </p>
@@ -22,10 +26,10 @@ import { Component } from '@angular/core';
       .height {
         height: 100vh;
       }
-      .bh{
-        margin-top:0px;
-        margin-bottom:0px;
-        background-color:black;
+      .bh {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: black;
       }
     `,
   ],

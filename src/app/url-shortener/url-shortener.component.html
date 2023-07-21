@@ -1,9 +1,14 @@
 <div class="container mt-4">
-     <h2>URL Shortener</h2>
-     <input [(ngModel)]="longUrl" class="form-control" placeholder="Enter Long URL" />
-     <button class="btn btn-light mt-2" (click)="shortenUrl()">Shorten</button>
+     <h2 class="text-light">URL SHORTENER</h2>
+     <input [(ngModel)]="longUrl" class="form-control p-3" placeholder="Enter Your URL" />
+
      <p *ngIf="shortUrl" class="mt-2">Short URL: {{ shortUrl }}</p>
-     <button class="btn btn-light mt-2" (click)="showHistory()">Show History</button>
+     <!-- Show history -->
+     <div class="gx-4 d-flex justify-content-between">
+          <button class="btn btn-light mt-3" (click)="shortenUrl()">Shorten</button>
+          <button class="btn btn-light mt-3" (click)="showHistory()">Show History</button>
+     </div>
+
 </div>
 
 <div class="container mt-4" *ngIf="showingHistory">
