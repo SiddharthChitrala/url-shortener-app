@@ -3,17 +3,31 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="container-fluid">
-      <p class="fs-5">URL Shortener App</p>
-      <app-url-shortener></app-url-shortener>
+    <div class="bg">
+      <p class="fs-2 text-center">URL Shortener App</p>
+      <p class="height">
+        <app-url-shortener></app-url-shortener>
+      </p>
+      <p class="bh ">
+        <app-url-footer></app-url-footer>
+      </p>
     </div>
   `,
-  styles: [`
-    .container-fluid {
-      background-image: url('bg.jpg');
-      background-size: cover;
-      height: 100vh;
-    }
-  `]
+  styles: [
+    `
+      .bg {
+        background-image: url('bg.jpg');
+        background-size: cover;
+      }
+      .height {
+        height: 100vh;
+      }
+      .bh{
+        margin-top:0px;
+        margin-bottom:0px;
+        background-color:black;
+      }
+    `,
+  ],
 })
-export class AppComponent { }
+export class AppComponent {}
