@@ -11,20 +11,25 @@
 
 </div>
 
-<div class="container mt-4" *ngIf="showingHistory">
-     <h3>History</h3>
-     <ul class="list-group">
-          <li *ngFor="let entry of history; let i = index" class="list-group-item d-flex justify-content-between">
-               <div>
-                    <p>Your link:</p>
-                    <span>{{ entry.longUrl }}</span>
-               </div>
-               <div>
-                    <p>Your shortened link:</p>
-                    <span>{{ entry.shortUrl }}</span>
-               </div>
-               <button class="btn btn-danger btn-sm" (click)="deleteEntry(i)">Delete</button>
-          </li>
-     </ul>
-     <button class="btn btn-light mt-2" (click)="hideHistory()">Close</button>
+<div class="container mt-4" *ngIf="showingHistory" style="max-height: 300px;">
+     <div style="position: sticky; top: 0; background-color: rgba(255, 255, 255, 0); padding: 10px;">
+          <h3>History</h3>
+     </div>
+     <div style="max-height: 250px; overflow-y: scroll; margin-bottom: 2px;">
+          <ul class="list-group ">
+               <li *ngFor="let entry of history; let i = index" class="list-group-item d-flex justify-content-between mb-2">
+                    <div>
+                         <p>Your link:</p>
+                         <span>{{ entry.longUrl }}</span>
+                    </div>
+                    <div>
+                         <p>Your shortened link:</p>
+                         <span>{{ entry.shortUrl }}</span>
+                    </div>
+                    <button class="btn btn-danger mt-3 mb-3 " (click)="deleteEntry(i)">Delete</button>
+               </li>
+          </ul>
+     </div>
+     <button class="btn btn-outline-light  mt-2" (click)="hideHistory()" style="position: sticky;">Close</button>
 </div>
+
