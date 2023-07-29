@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       <p class="height">
         <app-url-shortener></app-url-shortener>
       </p>
-      <p class="bh ">
+      <p class="bh">
         <app-url-footer></app-url-footer>
       </p>
     </div>
